@@ -2,12 +2,20 @@ Git Guide
 =========
 
 `Install`_
+
 `Add user config`_
+
 `Create SSH key`_
+
 `Clone repository`_
+
 `Fork repository`_
+
 `Create new branch`_
+
 `Create commit`_
+
+`Create pull reqest`_
 
 Install
 -------
@@ -129,4 +137,29 @@ Create commit
 6) Create commit: :code:`git commit`. You can add :code:`-m "commit message"` for an easier option.
 
 7) :code:`git push`
+
+Create pull reqest
+------------------
+
+1) Go to your git. Open repository.
+
+2) After pushing git propose for you create `Pull reqest`
+
+.. image:: src/git_14.png
+
+2.1) Maybe, git not proposed. The need go to `Pull requests`
+
+2.2) Press `New Pull request`
+
+.. image:: src/git_15.png
+
+2.3) Select the needed branch for the pull request
+
+.. image:: src/git_16.png
+
+3) Create Pull request
+
+.. image:: src/git_17.png
+
+4) Review
 
