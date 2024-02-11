@@ -1,0 +1,33 @@
+C:\Users\egorm\RiderProjects\Lab1\TwoDArrOps\bin\Debug\net7.0\TwoDArrOps.deps.json
+C:\Users\egorm\RiderProjects\Lab1\TwoDArrOps\bin\Debug\net7.0\TwoDArrOps.dll
+C:\Users\egorm\RiderProjects\Lab1\TwoDArrOps\bin\Debug\net7.0\TwoDArrOps.pdb
+C:\Users\egorm\RiderProjects\Lab1\TwoDArrOps\obj\Debug\net7.0\TwoDArrOps.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\egorm\RiderProjects\Lab1\TwoDArrOps\obj\Debug\net7.0\TwoDArrOps.AssemblyInfoInputs.cache
+C:\Users\egorm\RiderProjects\Lab1\TwoDArrOps\obj\Debug\net7.0\TwoDArrOps.AssemblyInfo.cs
+C:\Users\egorm\RiderProjects\Lab1\TwoDArrOps\obj\Debug\net7.0\TwoDArrOps.csproj.CoreCompileInputs.cache
+C:\Users\egorm\RiderProjects\Lab1\TwoDArrOps\obj\Debug\net7.0\TwoDArrOps.dll
+C:\Users\egorm\RiderProjects\Lab1\TwoDArrOps\obj\Debug\net7.0\refint\TwoDArrOps.dll
+C:\Users\egorm\RiderProjects\Lab1\TwoDArrOps\obj\Debug\net7.0\TwoDArrOps.pdb
+C:\Users\egorm\RiderProjects\Lab1\TwoDArrOps\obj\Debug\net7.0\ref\TwoDArrOps.dll
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\Lab1\TwoDArrOps\bin\Debug\net7.0\TwoDArrOps.deps.json
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\Lab1\TwoDArrOps\bin\Debug\net7.0\TwoDArrOps.dll
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\Lab1\TwoDArrOps\bin\Debug\net7.0\TwoDArrOps.pdb
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\Lab1\TwoDArrOps\obj\Debug\net7.0\TwoDArrOps.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\Lab1\TwoDArrOps\obj\Debug\net7.0\TwoDArrOps.AssemblyInfoInputs.cache
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\Lab1\TwoDArrOps\obj\Debug\net7.0\TwoDArrOps.AssemblyInfo.cs
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\Lab1\TwoDArrOps\obj\Debug\net7.0\TwoDArrOps.csproj.CoreCompileInputs.cache
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\Lab1\TwoDArrOps\obj\Debug\net7.0\TwoDArrOps.dll
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\Lab1\TwoDArrOps\obj\Debug\net7.0\refint\TwoDArrOps.dll
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\Lab1\TwoDArrOps\obj\Debug\net7.0\TwoDArrOps.pdb
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\Lab1\TwoDArrOps\obj\Debug\net7.0\ref\TwoDArrOps.dll
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\23_Trokhymchuk_Yehor_Lab1\TwoDArrOps\bin\Debug\net7.0\TwoDArrOps.deps.json
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\23_Trokhymchuk_Yehor_Lab1\TwoDArrOps\bin\Debug\net7.0\TwoDArrOps.dll
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\23_Trokhymchuk_Yehor_Lab1\TwoDArrOps\bin\Debug\net7.0\TwoDArrOps.pdb
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\23_Trokhymchuk_Yehor_Lab1\TwoDArrOps\obj\Debug\net7.0\TwoDArrOps.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\23_Trokhymchuk_Yehor_Lab1\TwoDArrOps\obj\Debug\net7.0\TwoDArrOps.AssemblyInfoInputs.cache
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\23_Trokhymchuk_Yehor_Lab1\TwoDArrOps\obj\Debug\net7.0\TwoDArrOps.AssemblyInfo.cs
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\23_Trokhymchuk_Yehor_Lab1\TwoDArrOps\obj\Debug\net7.0\TwoDArrOps.csproj.CoreCompileInputs.cache
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\23_Trokhymchuk_Yehor_Lab1\TwoDArrOps\obj\Debug\net7.0\TwoDArrOps.dll
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\23_Trokhymchuk_Yehor_Lab1\TwoDArrOps\obj\Debug\net7.0\refint\TwoDArrOps.dll
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\23_Trokhymchuk_Yehor_Lab1\TwoDArrOps\obj\Debug\net7.0\TwoDArrOps.pdb
+C:\Users\egorm\Desktop\уник\Programming\1 курс 2 сем Програмування алгоритмічних структур\23_Trokhymchuk_Yehor_Lab1\TwoDArrOps\obj\Debug\net7.0\ref\TwoDArrOps.dll
