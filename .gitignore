@@ -33,3 +33,9 @@
 
 # Hide files
 .*
+
+#Directories
+[Bb]in/
+[Dd]ebug/
+[Oo]bj/
+[Rr]elease/
