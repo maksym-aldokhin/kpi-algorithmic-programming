@@ -38,7 +38,7 @@ zero_rows_with_more_positive_than_negative(std::vector<std::vector<int>> &matrix
     for (auto &row : matrix) {
         std::size_t positive_count = 0;
         std::size_t negative_count = 0;
-        for (const auto element : row) {
+        for (const auto &element : row) {
             if (element > 0) {
                 ++positive_count;
             } else if (element < 0) {
