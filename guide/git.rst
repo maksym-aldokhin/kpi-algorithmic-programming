@@ -17,6 +17,8 @@ Git Guide
 
 `Create pull reqest`_
 
+`Update forked repository`_
+
 Install
 -------
 
@@ -163,3 +165,19 @@ Create pull reqest
 
 4) Review
 
+Update forked repository
+------------------
+
+1) Go to your web git hub. Open repository.
+
+2) Press `Sync fork`
+
+.. image:: src/git_18.png
+
+3) Preess `Update branch`
+
+.. image:: src/git_19.png
+
+4) Branch is updated
+
+.. image:: src/git_20.png
