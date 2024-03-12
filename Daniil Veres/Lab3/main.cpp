@@ -46,13 +46,20 @@ counting_sort(std::vector<std::int32_t>& column) {
 
 void
 bucket_sort(std::vector<std::int32_t>& column) {
-    std::size_t size = column.size(), row = 0;
-    std::vector<std::vector<std::int32_t>> buckets(size);
+    std::size_t row = 0;
+    std::size_t size = column.size();
+    auto num_buckets = static_cast<size_t>(std::sqrt(size));
+    std::vector<std::vector<std::int32_t>> buckets(num_buckets);
+    std::int32_t min_val = *std::min_element(column.begin(), column.end());
+    std::int32_t max_val = *std::max_element(column.begin(), column.end());
+    std::int32_t range = max_val - min_val + 1;
+    std::size_t bucket_range = range / num_buckets + 1;
     for (const auto& val : column) {
-        std::size_t index = std::max(std::size_t(0), std::min(size - 1, (val + 100) * size / 200));
+        std::size_t index = (val - min_val) / bucket_range;
         buckets[index].push_back(val);
     }
     for (auto& bucket : buckets) {
+        std::sort(bucket.begin(), bucket.end());
         std::uint8_t swapped;
         do {
             swapped = false;
