@@ -49,11 +49,20 @@ bucket_sort(std::vector<std::int32_t>& column) {
     std::size_t size = column.size(), row = 0;
     std::vector<std::vector<std::int32_t>> buckets(size);
     for (const auto& val : column) {
-        std::size_t index = (val + 100) * size / 200;
+        std::size_t index = std::max(std::size_t(0), std::min(size - 1, (val + 100) * size / 200));
         buckets[index].push_back(val);
     }
     for (auto& bucket : buckets) {
-        std::sort(bucket.begin(), bucket.end());
+        std::uint8_t swapped;
+        do {
+            swapped = false;
+            for (std::size_t i = 1; i < bucket.size(); ++i) {
+                if (bucket[i - 1] > bucket[i]) {
+                    std::swap(bucket[i - 1], bucket[i]);
+                    swapped = true;
+                }
+            }
+        } while (swapped);
     }
     for (const auto& bucket : buckets) {
         for (const auto& val : bucket) {
