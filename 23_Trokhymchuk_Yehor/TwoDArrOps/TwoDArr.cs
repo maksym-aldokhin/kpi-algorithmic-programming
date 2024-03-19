@@ -10,7 +10,7 @@ public class TwoDArr
     private int[,] _arr;
     private Action<string> _printAction;
     private int _lengthX, _lengthY;
-    private TimeLogger _timeLogger;
+    private TimeLogger.TimeLogger _timeLogger;
     
     public TwoDArr(Action<string> printAction)
     {

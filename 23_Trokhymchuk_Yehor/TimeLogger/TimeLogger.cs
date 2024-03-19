@@ -2,7 +2,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace TwoDArrOps;
+namespace TimeLogger;
 
 public class TimeLogger
 {

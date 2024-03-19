@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using TwoDArrOps;
 
 namespace Lab3;
 
@@ -8,7 +7,7 @@ public class Program
     public static void Main(string[] args)
     {
         int dimLenght;
-        TimeLogger logger = new();
+        TimeLogger.TimeLogger logger = new();
         string userInput;
 
         while (true)

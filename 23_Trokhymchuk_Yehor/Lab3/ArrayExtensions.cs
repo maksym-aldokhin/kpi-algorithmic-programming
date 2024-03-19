@@ -1,4 +1,4 @@
-using TwoDArrOps;
+
 
 namespace Lab3;
 
@@ -98,7 +98,7 @@ public static class ArrayExtensions
         }
     }
     
-    public static string SortHalfLog<T>(Action<T[]> sort, T[,] matrix, TimeLogger logger)
+    public static string SortHalfLog<T>(Action<T[]> sort, T[,] matrix, TimeLogger.TimeLogger logger)
     {
         int size = (int)Math.Sqrt(matrix.Length);
 
