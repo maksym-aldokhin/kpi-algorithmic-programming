@@ -1,4 +1,3 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab1", "Lab1\Lab1.csproj", "{D9140B8D-4585-4923-9FA5-4404ACD27A96}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -14,6 +13,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarks", "Benchmarks\Benchmarks.csproj", "{905734AF-F0CF-4F45-806A-2EFF4F5D9653}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLogger", "TimeLogger\TimeLogger.csproj", "{1D9CD50F-B6B6-4DF7-ACEA-098BC91946FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab3", "Lab3\Lab3.csproj", "{BDAB71B7-5B3F-495D-9B1E-4697B35B7F7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,9 +42,23 @@ Global
 		{1D9CD50F-B6B6-4DF7-ACEA-098BC91946FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D9CD50F-B6B6-4DF7-ACEA-098BC91946FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D9CD50F-B6B6-4DF7-ACEA-098BC91946FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDAB71B7-5B3F-495D-9B1E-4697B35B7F7F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDAB71B7-5B3F-495D-9B1E-4697B35B7F7F}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D9140B8D-4585-4923-9FA5-4404ACD27A96} = {FED26645-4735-425A-8ECB-CF6A2302A163}
 		{D12A97C8-37DC-48C4-B4BD-4815ABC18D06} = {FED26645-4735-425A-8ECB-CF6A2302A163}
+		{BDAB71B7-5B3F-495D-9B1E-4697B35B7F7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDAB71B7-5B3F-495D-9B1E-4697B35B7F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDAB71B7-5B3F-495D-9B1E-4697B35B7F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDAB71B7-5B3F-495D-9B1E-4697B35B7F7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B824C540-98EF-412A-96AF-A55FB53BAD17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B824C540-98EF-412A-96AF-A55FB53BAD17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D12A97C8-37DC-48C4-B4BD-4815ABC18D06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D12A97C8-37DC-48C4-B4BD-4815ABC18D06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9140B8D-4585-4923-9FA5-4404ACD27A96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9140B8D-4585-4923-9FA5-4404ACD27A96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 EndGlobal

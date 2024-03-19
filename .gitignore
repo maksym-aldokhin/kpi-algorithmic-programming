@@ -35,7 +35,10 @@
 .*
 
 #Directories
-[Bb]in/
-[Dd]ebug/
-[Oo]bj/
 [Rr]elease/
+[Dd]ebug/
+[Bb]uild/
+[Bb]in/
+[Oo]bj/
+.[Ii]dea/
+[Ee]xport/
