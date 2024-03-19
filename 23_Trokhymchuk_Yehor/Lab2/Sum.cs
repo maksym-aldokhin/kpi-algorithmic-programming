@@ -1,4 +1,4 @@
-using TwoDArrOps;
+
 
 namespace Lab2;
 
@@ -8,7 +8,7 @@ public class Sum
     // Math.Exp
     
     private double _result;
-    private TimeLogger _logger;
+    private TimeLogger.TimeLogger _logger;
     private ThreadLocal<double> _resultPerThread;
     
     public Sum()

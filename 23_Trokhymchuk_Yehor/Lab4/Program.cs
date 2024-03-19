@@ -1,11 +1,10 @@
 ﻿using System.Text;
-using TwoDArrOps;
 
 namespace Lab4
 {
     internal class Program
     {
-        private static void UnsortedCsv(out List<TrackModel> entries, TimeLogger logger)
+        private static void UnsortedCsv(out List<TrackModel> entries, TimeLogger.TimeLogger logger)
         {
             logger.SetMessage("Parsing file").Start();
             ListExtensions.ParseCsv(out entries, "../../../Data/spotify_songs.csv");
@@ -29,7 +28,7 @@ namespace Lab4
         public static void Main(string[] args)
         {
             List<TrackModel> data = null!;
-            TimeLogger logger = new();
+            TimeLogger.TimeLogger logger = new();
             var exportPath = "../../../Export/";
             var builder = new StringBuilder(200);
 
