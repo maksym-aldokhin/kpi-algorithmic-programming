@@ -14,6 +14,8 @@
     <ItemGroup>
       <ProjectReference Include="..\Lab2\Lab2.csproj" />
       <ProjectReference Include="..\Lab3\Lab3.csproj" />
+      <ProjectReference Include="..\Lab4\Lab4.csproj" />
+      <PackageReference Include="BenchmarkDotNet" Version="0.13.12" />
     </ItemGroup>
 
 </Project>
