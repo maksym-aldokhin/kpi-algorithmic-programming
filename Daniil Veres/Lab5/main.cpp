@@ -122,10 +122,10 @@ main() {
     first_number.add(dis(gen));
     second_number.add(dis(gen));
     dis = std::uniform_int_distribution<std::int8_t>(0, 9);
-    for (std::size_t i = 0; i < FIRST_NUMBER_SIZE; ++i) {
+    for (std::size_t i = 0; i < FIRST_NUMBER_SIZE - 1; ++i) {
         first_number.add(dis(gen));
     }
-    for (std::size_t i = 0; i < SECOND_NUMBER_SIZE; ++i) {
+    for (std::size_t i = 0; i < SECOND_NUMBER_SIZE - 1; ++i) {
         second_number.add(dis(gen));
     }
     first_number.display();
