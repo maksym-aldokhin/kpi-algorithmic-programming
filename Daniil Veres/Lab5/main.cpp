@@ -1,7 +1,7 @@
 #include <iostream>
 #include <random>
 
-constexpr std::size_t FIRST_NUMBER_SIZE = 3, SECOND_NUMBER_SIZE = 3;
+constexpr std::size_t FIRST_NUMBER_SIZE = 1, SECOND_NUMBER_SIZE = 1;
 
 class list {
 private:
@@ -133,13 +133,17 @@ main() {
     sign = first_number.subtract(second_number);
     std::cout << "Result: " << (sign == -1 ? "-" : "");
     if (sign == 1) {
-        while (first_number.get_data() == 0) {
-            ++first_number;
+        if (FIRST_NUMBER_SIZE != 1) {
+            while (first_number.get_data() == 0) {
+                ++first_number;
+            }
         }
         first_number.display();
     } else {
-        while (second_number.get_data() == 0) {
-            ++second_number;
+        if (SECOND_NUMBER_SIZE != 1) {
+            while (second_number.get_data() == 0) {
+                ++second_number;
+            }
         }
         second_number.display();
     }
