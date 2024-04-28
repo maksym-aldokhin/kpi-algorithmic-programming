@@ -247,7 +247,7 @@ public sealed class DoubleLinkedList<T>
         
         while (lastNode.Next is not null)
         {
-            if (lastNode.Equals(data))
+            if (!lastNode.Equals(data))
             {
                 return false;
             }
