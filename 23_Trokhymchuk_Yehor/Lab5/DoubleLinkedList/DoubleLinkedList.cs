@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-
-
 namespace DoubleLinkedList;
 
 public sealed class DoubleLinkedList<T>
@@ -8,6 +5,26 @@ public sealed class DoubleLinkedList<T>
     private DoubleLinkedListNode<T>? _tail = null;
     private DoubleLinkedListNode<T>? _head = null;
     public int Capacity { get; private set; }
+    public T this[int index]
+    {
+        get
+        {
+            if (index < 0 || index >= Capacity)
+            {
+                throw new IndexOutOfRangeException();
+            }
+            
+            var val = TakeElementByInd(index);
+            
+            if (val is null)
+            {
+                throw new NullReferenceException();
+            }
+            
+
+            return val;
+        }
+    }
     private bool InitRoot(T data)
     {
         if (_head is null)
@@ -212,5 +229,297 @@ public sealed class DoubleLinkedList<T>
             temp = null!;
             Capacity--;
         }
+    }
+
+    public bool Contains(T data)
+    {
+        var lastNode = _head;
+        
+        if (lastNode is null)
+        {
+            return false;
+        }
+        
+        if (lastNode.Next is null)
+        {
+            return lastNode.Equals(data);
+        }
+        
+        while (lastNode.Next is not null)
+        {
+            if (lastNode.Equals(data))
+            {
+                return true;
+            }
+            lastNode = lastNode.Next;
+        }
+
+        return false;
+    }
+
+    public T? TakeElementByInd(int ind)
+    {
+        if (ind < 0 || ind >= Capacity)
+        {
+            return default;
+        }
+        
+        if (ind <= Capacity / 2 || Capacity / 2 == 0)
+        {
+            var temp = _head;
+            var counter = 0;
+            
+            while (temp is not null && counter != ind)
+            {
+                temp = temp.Next;
+                counter++;
+            }
+
+            return temp;
+        }
+        else
+        {
+            var temp = _tail;
+            var counter = Capacity - 1;
+            while (temp is not null && counter != ind)
+            {
+                temp = temp.Previous;
+                counter--;
+            }
+
+            return temp;
+        }
+    }
+
+    public void RemoveByInd(int ind)
+    {
+        if (ind < 0 || ind >= Capacity)
+        {
+            return;
+        }
+        
+        DoubleLinkedListNode<T> temp;
+        if (ind <= Capacity / 2 || Capacity / 2 == 0)
+        {
+            temp = _head!;
+            var counter = 0;
+
+            while (temp is not null && counter != ind)
+            {
+                temp = temp.Next;
+                counter++;
+            }
+        }
+        else
+        {
+            temp = _tail!;
+            var counter = Capacity - 1;
+
+            while (temp is not null && counter != ind)
+            {
+                temp = temp.Previous;
+                counter--;
+            }
+        }
+
+        if (temp.Previous is null) // temp is head
+        {
+            if (_head == _tail)
+            {
+                _head = null;
+                _tail = null;
+            }
+            else
+            {
+                temp = _head.Next;
+             
+                if (_head.Next is not null)
+                {
+                    _head.Next.Previous = null!;
+                }
+                _head = null!;
+                _head = temp;
+            }
+        }
+        else if (temp.Next is null) // temp is tail
+        {
+            if (_head == _tail)
+            {
+                _head = null;
+                _tail = null;
+            }
+            else
+            {
+                temp = _tail.Previous;
+                if (_tail.Previous is not null)
+                {
+                    _tail.Previous.Next = null!;
+                }
+                _tail = null;
+                _tail = temp;
+            }
+        }
+        else  // remove middle
+        {
+            var previous = temp.Previous;
+            var next = temp.Next;
+            temp.Previous = null!;
+            temp.Next = null!;
+            temp = null;
+            previous.Next = next;
+            next.Previous = previous;
+        }
+        
+        Capacity--;
+    }
+
+    public void Clear()
+    {
+        _head = _tail = null;
+    }
+
+    private DoubleLinkedListNode<T>? TakeNodeByInd(int ind)
+    {
+        if (ind < 0 || ind >= Capacity)
+        {
+            return default;
+        }
+        
+        if (ind <= Capacity / 2 || Capacity / 2 == 0)
+        {
+            var temp = _head;
+            var counter = 0;
+            
+            while (temp is not null && counter != ind)
+            {
+                temp = temp.Next;
+                counter++;
+            }
+
+            return temp;
+        }
+        else
+        {
+            var temp = _tail;
+            var counter = Capacity - 1;
+            while (temp is not null && counter != ind)
+            {
+                temp = temp.Previous;
+                counter--;
+            }
+
+            return temp;
+        }
+    }
+    
+    public void Swap(int indA, int indB)
+    {
+        if (indA == indB 
+            || indA < 0 
+            || indB < 0 
+            || indA >= Capacity 
+            || indB >= Capacity)
+        {
+            return;
+        }
+        
+        DoubleLinkedListNode<T>? first = null, second = null;
+        
+        if (indA > indB)
+        {
+            (indA, indB) = (indB, indA);
+        }
+        
+        first = TakeNodeByInd(indA);
+        second = TakeNodeByInd(indB);
+        
+
+        var firstPrev = first?.Previous;
+        var firstNext = first?.Next;
+
+
+        if (first.Next != second && second.Previous != first) // if elements is not close
+        {
+            var tempFirstPrev = first?.Previous;
+            var tempFirstNext = first?.Next;
+            var tempSecondPrev = second?.Previous;
+            var tempSecondNext = second?.Next;
+            
+            first.Previous = second.Previous;
+            first.Next = second.Next;
+            second.Previous = firstPrev;
+            second.Next = firstNext;
+
+            if (tempFirstPrev is not null)
+            {
+                tempFirstPrev.Next = second;
+            }
+            else
+            {
+                _head = second;
+            }
+            if (tempFirstNext is not null)
+            {
+                tempFirstNext.Previous = second;
+            }
+            if (tempSecondNext is not null)
+            {
+                tempSecondNext.Previous = first;
+            }
+            else
+            {
+                _tail = first;
+            }
+            if (tempSecondPrev is not null)
+            {
+                tempSecondPrev.Next = first;
+            }
+        }
+        else if(first != _head)
+        {
+            //var tempF = first.Previous;
+            first.Next = second.Next;
+            if (second.Next != null)
+            { 
+                second.Next.Previous = first;
+            }
+            first.Previous = second;
+            second.Previous = firstPrev;
+            firstPrev.Next = second;
+            second.Next = first;
+            
+            if (first.Next is null)
+            {
+                _tail = first;
+            }
+        }
+        else
+        {
+            _head.Next = second.Next;
+            second.Next.Previous = _head;
+            _head.Previous = second;
+            second.Previous = null!;
+            second.Next = _head;
+
+            _head = second;
+        }
+    }
+
+    public int TakeInd(T data)
+    {
+        var temp = _head;
+        int counter = 0;
+
+        while (temp != null)
+        {
+            if (temp.Equals(data))
+            {
+                return counter;
+            }
+            counter++;
+            temp = temp.Next;
+        }
+
+        return -1;
     }
 }
