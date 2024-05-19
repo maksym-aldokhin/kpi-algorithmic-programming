@@ -11,10 +11,12 @@ constexpr std::string_view TABLE_NAME = "spotify_songs.csv";
 constexpr std::string_view SORTED_TABLE = "spotify_songs_sorted.csv";
 constexpr std::string_view TABLE_HEADER = "track_id,track_name,track_artist,track_popularity,track_album_id,track_album_name,track_album_release_date,playlist_name,playlist_id,playlist_genre,playlist_subgenre,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,duration_ms";
 constexpr std::string_view WORD_TO_SEARCH_LINEAR = "you";
-constexpr std::string_view WORD_TO_SEARCH_FIBONACCI = "My Nigga";
+constexpr std::string_view LINE_TO_SEARCH_FIBONACCI = "My Nigga";
 constexpr std::string_view LINEAR_SEARCH = "linear_search.txt";
 constexpr std::string_view FIBONACCI_SEARCH = "fibonacci_search.txt";
 constexpr char SEPARATOR = ',';
+
+std::size_t ID_LENGTH;
 
 enum class error_code {
     FILE_NOT_FOUND = 1,
@@ -29,16 +31,16 @@ print_string(const std::string& string, std::string_view file_name) {
 }
 
 std::string
-parse_name(const std::string& line, std::size_t id_length) {
+parse_name(const std::string& line) {
     std::string song_name;
-    std::size_t pos = id_length;
+    std::size_t pos = ID_LENGTH;
     if (line[pos] == '"') {
-        ++pos;
         while (pos < line.length()) {
+            song_name += line[pos];
             if (line[pos] == '"' && line[pos + 1] == SEPARATOR) {
                 break;
             }
-            song_name += line[pos++];
+            ++pos;
         }
     } else {
         while (pos < line.length() && line[pos] != SEPARATOR) {
@@ -57,12 +59,12 @@ linear_search(const std::string& word_to_search, std::ifstream& table) {
     }
     std::string line;
     std::getline(table, line);
-    std::size_t id_length = line.find(SEPARATOR) + 1;
+    ID_LENGTH = line.find(SEPARATOR) + 1;
     std::size_t word_pos = 0, current_line = 2, occurrences = 0;
     std::size_t word_length = word_to_search.length();
     std::cout << "Word \"" << word_to_search << "\" found in the next lines:" << std::endl;
     while (std::getline(table, line)) {
-        const auto song_name = parse_name(line, id_length);
+        const auto song_name = parse_name(line);
         for (std::size_t pos = 0; pos < song_name.length(); ++pos) {
             if (tolower(song_name[pos]) == word_to_search[word_pos] || toupper(song_name[pos]) == word_to_search[word_pos]) {
                 if (word_pos + 1 == word_length && (song_name[pos + 1] == ' ' || song_name[pos + 1] == '"' || pos + 1 == song_name.length())) {
@@ -95,14 +97,9 @@ sort_table(std::ifstream& table, std::string_view sorted_table) {
         lines.push_back(line);
     }
     std::sort(lines.begin(), lines.end(), [](const std::string& a, const std::string& b) {
-        std::stringstream ss_a(a);
-        std::stringstream ss_b(b);
-        std::string temp;
         std::string item_a, item_b;
-        std::getline(ss_a, temp, SEPARATOR);
-        std::getline(ss_b, temp, SEPARATOR);
-        std::getline(ss_a, item_a, SEPARATOR);
-        std::getline(ss_b, item_b, SEPARATOR);
+        item_a = parse_name(a);
+        item_b = parse_name(b);
         return item_a < item_b;
     });
     std::ofstream output_file((std::string(sorted_table)));
@@ -118,7 +115,7 @@ sort_table(std::ifstream& table, std::string_view sorted_table) {
 }
 
 std::uint8_t
-fibonacci_search_helper(const std::vector<std::string>& lines, const std::string& word_to_search) {
+fibonacci_search_helper(const std::vector<std::string>& lines, const std::string& line_to_search) {
     std::int32_t fib2 = 0, fib1 = 1, fib = fib1 + fib2, offset = -1;
     auto n = static_cast<std::int32_t>(lines.size());
     while (fib < n) {
@@ -129,14 +126,13 @@ fibonacci_search_helper(const std::vector<std::string>& lines, const std::string
     while (fib > 1) {
         std::int32_t i = std::min(offset + fib2, n - 1);
         std::stringstream ss(lines[i]);
-        std::string item, temp;
-        std::getline(ss, temp, SEPARATOR);
-        std::getline(ss, item, SEPARATOR);
-        if (item == word_to_search) {
+        std::string item;
+        item = parse_name(lines[i]);
+        if (item == line_to_search) {
             std::cout << "(" << i + 2 << ") ";
-            print_string(parse_name(lines[i], temp.length() + 1), FIBONACCI_SEARCH);
+            print_string(parse_name(lines[i]), FIBONACCI_SEARCH);
             return 1;
-        } else if (item < word_to_search) {
+        } else if (item < line_to_search) {
             fib = fib1;
             fib1 = fib2;
             fib2 = fib - fib1;
@@ -151,7 +147,7 @@ fibonacci_search_helper(const std::vector<std::string>& lines, const std::string
 }
 
 void
-fibonacci_search(const std::string& word_to_search, std::ifstream& table) {
+fibonacci_search(const std::string& line_to_search, std::ifstream& table) {
     std::ofstream output_file((std::string(FIBONACCI_SEARCH)));
     if (!output_file.is_open()) {
         std::cerr << "Error: File not found" << std::endl;
@@ -163,9 +159,9 @@ fibonacci_search(const std::string& word_to_search, std::ifstream& table) {
     while (std::getline(table, line)) {
         lines.push_back(line);
     }
-    std::cout << "Line \"" << word_to_search << "\" found:" << std::endl;
-    if (!fibonacci_search_helper(lines, word_to_search)) {
-        std::cout << "Line \"" << word_to_search << "\" not found." << std::endl;
+    std::cout << "Line \"" << line_to_search << "\" found:" << std::endl;
+    if (!fibonacci_search_helper(lines, line_to_search)) {
+        std::cout << "Line \"" << line_to_search << "\" not found." << std::endl;
     }
 }
 
@@ -194,7 +190,7 @@ main() {
         exit(static_cast<std::int32_t>(error_code::FILE_NOT_FOUND));
     }
     std::cout << "Fibonacci search" << std::endl << "----------------" << std::endl;
-    fibonacci_search(std::string(WORD_TO_SEARCH_FIBONACCI), table);
+    fibonacci_search(std::string(LINE_TO_SEARCH_FIBONACCI), table);
     table.close();
     return 0;
 }
