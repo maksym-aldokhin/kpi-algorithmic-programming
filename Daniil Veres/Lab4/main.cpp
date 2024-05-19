@@ -4,7 +4,6 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-#include <string_view>
 #include <vector>
 
 constexpr std::string_view TABLE_NAME = "spotify_songs.csv";
